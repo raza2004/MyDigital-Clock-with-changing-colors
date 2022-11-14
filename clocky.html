@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <script src="./clocky.js"></script>
+</head>
+<body>
+    <script>setInterval(chgcolor,1000);
+        function chgcolor()
+        {
+        var newVal=Math.floor(Math.random()*999).toFixed();
+        
+        
+        var alp="abcdef"
+        var alpnew=alp[Math.floor(Math.random()*6)]
+        var alpnew2=alp[Math.floor(Math.random()*6)]
+        var alpnew3=alp[Math.floor(Math.random()*6)]
+        
+        var newVar=+newVal+alpnew+alpnew2+alpnew3
+        
+        var newnew=newVar[Math.floor(Math.random()*6)]
+        var newnew1=newVar[Math.floor(Math.random()*6)]
+        var newnew2=newVar[Math.floor(Math.random()*6)]
+        var newnew3=newVar[Math.floor(Math.random()*6)]
+        var newnew4=newVar[Math.floor(Math.random()*6)]
+        var newnew5=newVar[Math.floor(Math.random()*6)]
+        
+        var newVar1='#'+newnew+newnew1+newnew2+newnew3+newnew4+newnew5
+        
+        
+        document.getElementById("Newcolor").style.backgroundColor=newVar1
+        }
+        
+        
+        var newVal=Math.floor(Math.random()*999).toFixed();
+        
+        
+        var alp="abcdef"
+        var alpnew=alp[Math.floor(Math.random()*6)]
+        var alpnew2=alp[Math.floor(Math.random()*6)]
+        var alpnew3=alp[Math.floor(Math.random()*6)]
+        var newVar=newVal+alpnew+alpnew2+alpnew3
+        
+        
+        //  alert(newnew+newnew1+newnew2+newnew3+newnew4+newnew5);
+        
+        
+        
+        setInterval(Clocky, 1000);
+        
+        function Clocky()
+        {
+            let time=new Date();
+            let hours=time.getHours()
+            let minutes=time.getMinutes()
+            let seconds=time.getSeconds()
+        
+           var am_pm="AM"
+         
+            if (hours > 12) {
+                am_pm = "PM";
+            }
+            if (hours == 0) {
+                hr = 12;
+                am_pm = "AM";
+        }
+        
+        if(hours<10){"0"+hours}
+        if(minutes<10){"0"+minutes}
+        if(seconds<10){"0"+seconds}
+        var currentTime=`${hours}:${minutes}:${seconds } ${am_pm}`;
+        
+        document.getElementById("clock").innerHTML=currentTime;
+        
+        }
+        Clocky();
+        </script>
+   <p>  <input type="button"  value="Click to change color" onclick=chgcolor()>
+    <body id="Newcolor">
+</p>
+<div id="clock" onload="Clocky()">Digital Clock</div>
+
+
+
+<style>
+#clock
+   { font-size: 75px;
+    background-color: rgb(134, 214, 238);
+    width: 450px;
+    margin: 200px;
+    text-align: center;
+    border: 10px solid rgb(14, 36, 54);
+    border-radius: 10px;}
+   </style>
+</body>
+</html>
